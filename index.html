@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính Điểm Loạn thế</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding: 20px;
+        background-color: #f8f9fa;
+      }
+      .result-box {
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        padding: 15px;
+        margin-top: 20px;
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Tính Điểm Loạn Thế</h2>
+      <form id="pointForm">
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="sachGiaiNhan"
+            >Sách Giải Nhân:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="sachGiaiNhanQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="sachGiaiNhanPoints"
+              placeholder="Điểm"
+              min="0"
+              value="2000"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="huyenTinh"
+            >Huyền Tinh:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="huyenTinhQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="huyenTinhPoints"
+              placeholder="Điểm"
+              min="0"
+              value="5"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="thuLinhQua"
+            >Thú Linh Quả:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="thuLinhQuaQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="thuLinhQuaPoints"
+              placeholder="Điểm"
+              min="0"
+              value="10"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="daTim"
+            >Đá Tăng Bảo Vật Tím:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="daTimQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="daTimPoints"
+              placeholder="Điểm"
+              min="0"
+              value="2"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="daCam"
+            >Đá Tăng Bảo Vật Cam:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="daCamQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="daCamPoints"
+              placeholder="Điểm"
+              min="0"
+              value="5"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="daDo"
+            >Đá Tăng Bảo Vật Đỏ:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="daDoQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="daDoPoints"
+              placeholder="Điểm"
+              min="0"
+              value="10"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="manhThuDo"
+            >Mảnh Thú Đỏ:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="manhThuDoQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="manhThuDoPoints"
+              placeholder="Điểm"
+              min="0"
+              value="80"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="manhThuKim"
+            >Mảnh Thú Kim:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="manhThuKimQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="manhThuKimPoints"
+              placeholder="Điểm"
+              min="0"
+              value="250"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="manhThuBachKim"
+            >Mảnh Thú Bạch Kim:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="manhThuBachKimQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="manhThuBachKimPoints"
+              placeholder="Điểm"
+              min="0"
+              value="320"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="baoVatDo"
+            >Bảo Vật Đỏ:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="baoVatDoQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="baoVatDoPoints"
+              placeholder="Điểm"
+              min="0"
+              value="30"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="baoVatKim"
+            >Bảo Vật Kim:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="baoVatKimQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="baoVatKimPoints"
+              placeholder="Điểm"
+              min="0"
+              value="70"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="baoVatBachKim"
+            >Bảo Vật Bạch Kim:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="baoVatBachKimQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="baoVatBachKimPoints"
+              placeholder="Điểm"
+              min="0"
+              value="140"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="lucTang"
+            >Lực Tăng 1000000:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="lucTangQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="lucTangPoints"
+              placeholder="Điểm"
+              min="0"
+              value="100"
+            />
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label class="col-sm-6 col-form-label" for="tieuBac"
+            >Tiêu 500000 Bạc:</label
+          >
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="tieuBacQty"
+              placeholder="Số lượng"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="number"
+              class="form-control"
+              id="tieuBacPoints"
+              placeholder="Điểm"
+              min="0"
+              value="5"
+            />
+          </div>
+        </div>
+        <button
+          type="button"
+          class="btn btn-success"
+          onclick="calculateItemPoints()"
+        >
+          Tính Điểm Vật Phẩm
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="calculateTotalPoints()"
+        >
+          Tính Tổng Điểm
+        </button>
+      </form>
+
+      <div class="result-box">
+        <h4 class="text-center" id="itemPoints"></h4>
+        <h3 class="text-center" id="totalPoints"></h3>
+      </div>
+    </div>
+
+    <script>
+      let totalPoints = 0;
+
+      function calculateItemPoints() {
+        totalPoints = 0; // Reset total points for new calculation
+        let itemPointsText = "";
+
+        const items = [
+          { qty: "sachGiaiNhanQty", points: "sachGiaiNhanPoints" }, // Sách Giải Nhân lên đầu
+          { qty: "huyenTinhQty", points: "huyenTinhPoints" },
+          { qty: "thuLinhQuaQty", points: "thuLinhQuaPoints" },
+          { qty: "daTimQty", points: "daTimPoints" },
+          { qty: "daCamQty", points: "daCamPoints" },
+          { qty: "daDoQty", points: "daDoPoints" },
+          { qty: "manhThuDoQty", points: "manhThuDoPoints" },
+          { qty: "manhThuKimQty", points: "manhThuKimPoints" },
+          { qty: "manhThuBachKimQty", points: "manhThuBachKimPoints" },
+          { qty: "baoVatDoQty", points: "baoVatDoPoints" },
+          { qty: "baoVatKimQty", points: "baoVatKimPoints" },
+          { qty: "baoVatBachKimQty", points: "baoVatBachKimPoints" },
+          { qty: "lucTangQty", points: "lucTangPoints" },
+          { qty: "tieuBacQty", points: "tieuBacPoints" },
+        ];
+
+        items.forEach((item) => {
+          const qty = document.getElementById(item.qty).value;
+          const points = document.getElementById(item.points).value;
+          const itemTotal = qty * points;
+          totalPoints += itemTotal;
+
+          itemPointsText += `${item.qty
+            .replace("Qty", "")
+            .replace(/([A-Z])/g, " $1")}: ${itemTotal}<br>`;
+        });
+
+        document.getElementById("itemPoints").innerHTML = itemPointsText;
+      }
+
+      function calculateTotalPoints() {
+        document.getElementById(
+          "totalPoints"
+        ).innerText = `Tổng điểm của bạn là: ${totalPoints}`;
+      }
+    </script>
+  </body>
+</html>
